@@ -1,0 +1,67 @@
+@startuml
+
+class Administrator extends Person {
+
+}
+
+class Person {
+  -String FirstName;
+  -String lastName;
+}
+
+class Employee extends Person {
+}
+
+class Customer extends Person {
+
+}
+
+interface Reservation {
+  reserve()
+  cancellation()
+}
+
+class Room {
+  -int qualityLevel;
+  -int beds;
+  -int roomNumber;
+  -boolean smokingStatus;
+  -boolean availability;
+  -double price;
+  -String description;
+  -int reservationNumber;
+}
+
+class ReservationImpl implements Reservation {
+  -boolean reservationStatus;
+  -double feeApplied;
+  -Room room;
+  String reserve()
+  String cancel()
+}
+
+class RemoteReservation {
+  Registry registry;
+  main()
+}
+
+class CustomerController {
+  - Customer customer;
+  - ReservationImpl reservation;
+  CustomerController()
+}
+
+class CustomerClient {
+  main()
+}
+
+class CustomerView {
+  void printReservationDetails(Customer, ReservationImpl)
+}
+
+Administrator "1" *-- "many" Person : contains
+Employee "1" *-- "many" Person : contains
+Customer "1" *-- "many" Person : contains
+Customer "1" *-- "1" Room
+Customer "1" *-- "1" Reservation
+@enduml
