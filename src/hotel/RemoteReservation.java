@@ -14,6 +14,7 @@ public class RemoteReservation {
         try {
             registry = LocateRegistry.createRegistry(1099);
             IReservation remote_obj = new ReservationImpl();
+//            String location = "//in-csci-rrpc01:2324/ReservationImpl";
             String location = "rmi://localhost/ReservationImpl";
             Naming.rebind(location,remote_obj);
             System.out.println("Server Ready");
