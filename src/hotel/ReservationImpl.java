@@ -1,6 +1,6 @@
 package hotel;
 
-import common.IReservation;
+import common.interfaces.IReservation;
 import common.Room;
 
 import java.rmi.RemoteException;

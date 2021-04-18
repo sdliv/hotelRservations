@@ -59,6 +59,9 @@ class CustomerView {
   void printReservationDetails(Customer, ReservationImpl)
 }
 
+
+CustomerClient -> RemoteReservation: reserve()
+CustomerClient -> RemoteReservation: cancel()
 Administrator "1" *-- "many" Person : contains
 Employee "1" *-- "many" Person : contains
 Customer "1" *-- "many" Person : contains

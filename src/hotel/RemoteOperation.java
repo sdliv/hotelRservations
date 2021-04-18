@@ -1,12 +1,17 @@
 package hotel;
 
-import common.IReservation;
+import common.controllers.Controller;
+import common.interfaces.ILogin;
+import common.interfaces.IReservation;
+import common.interfaces.IReturnView;
+import common.interfaces.IView;
+import common.views.UserView;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-public class RemoteReservation {
+public class RemoteOperation {
 
     static Registry registry;
 
@@ -14,8 +19,14 @@ public class RemoteReservation {
         try {
             registry = LocateRegistry.createRegistry(1099);
             IReservation remote_obj = new ReservationImpl();
+            ILogin login_obj = new LoginImpl();
+
 //            String location = "//in-csci-rrpc01:2324/ReservationImpl";
             String location = "rmi://localhost/ReservationImpl";
+            String loginLocation = "rmi://localhost/LoginImpl";
+
+
+            Naming.rebind(loginLocation, login_obj);
             Naming.rebind(location,remote_obj);
             System.out.println("Server Ready");
         } catch (Exception e) {

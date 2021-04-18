@@ -33,6 +33,6 @@ java -jar Hotel.java
 
 Then open up another terminal and type the command to send communication via RMI:  
 ```bash
-java -cp Hotel.jar client.CustomerClient
+java -cp Hotel.jar client.customer.CustomerClient
 ```
 
