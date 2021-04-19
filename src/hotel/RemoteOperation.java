@@ -17,13 +17,14 @@ public class RemoteOperation {
 
     public static void main (String[] args) {
         try {
-            registry = LocateRegistry.createRegistry(1099);
+            registry = LocateRegistry.createRegistry(2323);
             IReservation remote_obj = new ReservationImpl();
             ILogin login_obj = new LoginImpl();
 
-//            String location = "//in-csci-rrpc01:2324/ReservationImpl";
-            String location = "rmi://localhost/ReservationImpl";
-            String loginLocation = "rmi://localhost/LoginImpl";
+            String location = "//in-csci-rrpc01:2323/ReservationImpl";
+//            String location = "rmi://localhost/ReservationImpl";
+//            String loginLocation = "rmi://localhost/LoginImpl";
+            String loginLocation = "//in-csci-rrpc01:2323/LoginImpl";
 
 
             Naming.rebind(loginLocation, login_obj);
