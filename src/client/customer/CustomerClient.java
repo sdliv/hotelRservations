@@ -20,10 +20,10 @@ public class CustomerClient {
             Administrator administrator = new Administrator("Nicole", "Livingston", new Admin("admin"));
             Employee employee = new Employee("Stephon", "Johnson", new PowerUser("Employee"));
 
-            String location = "//in-csci-rrpc01:2323/ReservationImpl";
+            String location = "//in-csci-rrpc01:4590/ReservationImpl";
 //            String location = "rmi://localhost/ReservationImpl";
 //            String loginLocation = "rmi://localhost/LoginImpl";
-            String loginLocation = "//in-csci-rrpc01:2323/LoginImpl";
+            String loginLocation = "//in-csci-rrpc01:4590/LoginImpl";
 
             IReservation stub = (IReservation)Naming.lookup(location);
             ILogin loginStub = (ILogin)Naming.lookup(loginLocation);
