@@ -8,7 +8,6 @@ import common.roles.Admin;
 import common.roles.CUser;
 import common.roles.PowerUser;
 import common.users.Person;
-import common.views.AdminView;
 import common.views.ErrorView;
 import common.views.UserView;
 
