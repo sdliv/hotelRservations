@@ -34,10 +34,12 @@ make
 ```
 or ```make LinuxMakeFile``` for linux.
 
-A source-code only version of the project is available as well for testing.
+UPDATE: use the 'src' folder in order to run ```make```to compile on tesla.
 
 # Execute Hotel.jar
-Note: Default main() in jar file contains a static variable of type Registry that has LocateRegistry.createRegistry(1099) as its value.  
+UPDATED NOTE: Hotel.jar will not work on Tesla because my computer is running an updated version of java.  Tesla's version of java needs to be updated. Therefore, use the ```make``` method to compile and run on tesla.
+
+Note: Default main() in jar file contains a static variable of type Registry that has LocateRegistry.createRegistry(4590) as its value.  
 Note: running the Hotel.jar should start the RMI Registry by default.  
 To perform example of RMI execution do the following:  
 
