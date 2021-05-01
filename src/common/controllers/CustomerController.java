@@ -1,11 +1,14 @@
 package common.controllers;
 
+import common.Hotel;
+import common.Room;
 import common.users.Customer;
 import common.views.CustomerView;
 import common.views.UserView;
 import hotel.ReservationImpl;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 
 public class CustomerController extends Controller {
@@ -33,4 +36,8 @@ public class CustomerController extends Controller {
         this.reservation.reserve();
     }
 
+    @Override
+    public ArrayList<Room> getAvailableRooms() {
+        return Hotel.getAvailableRooms();
+    }
 }
