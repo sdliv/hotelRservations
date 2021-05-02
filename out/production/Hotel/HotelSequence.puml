@@ -9,6 +9,55 @@ class Person {
   -String lastName;
 }
 
+class Controller implements IReturnView {
+
+}
+
+class Role {
+  -String name;
+}
+
+class Admin extends Role {
+
+}
+class CUser extends Role {
+
+}
+
+class PowerUser extends Role {
+
+}
+
+interface ILogin {
+  UserView login(Person person)
+}
+
+interface IView {
+}
+
+interface IReturnView {
+  UserView returnView()
+}
+
+interface Reservation {
+  reserve()
+  cancellation()
+}
+
+class CustomerController extends Controller {
+  - Customer customer;
+  - ReservationImpl reservation;
+  CustomerController()
+}
+
+class AdminController extends Controller {
+
+}
+
+class EmployerController extends Controller {
+
+}
+
 class Employee extends Person {
 }
 
@@ -16,9 +65,28 @@ class Customer extends Person {
 
 }
 
-interface Reservation {
-  reserve()
-  cancellation()
+class AdminView extends UserView {
+
+}
+
+class CustomerView extends UserView {
+
+}
+
+class EmployeeView extends UserView {
+
+}
+
+class ErrorView extends UserView {
+
+}
+
+class UserView {
+
+}
+
+class LoginImpl implements ILogin {
+  UserView login(Person person);
 }
 
 class Room {
@@ -40,16 +108,12 @@ class ReservationImpl implements Reservation {
   String cancel()
 }
 
-class RemoteReservation {
+class RemoteOperation {
   Registry registry;
   main()
 }
 
-class CustomerController {
-  - Customer customer;
-  - ReservationImpl reservation;
-  CustomerController()
-}
+
 
 class CustomerClient {
   main()

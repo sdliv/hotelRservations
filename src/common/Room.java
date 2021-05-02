@@ -11,7 +11,7 @@ public class Room {
     private String description;
     private int reservationNumber;
 
-    public Room(int qualityLevel, int beds, int roomNumber, boolean smokingStatus, boolean availability, double price, String description, int reservationNumber) {
+    public Room(int qualityLevel, int beds, boolean smokingStatus, boolean availability, String description, int reservationNumber, int roomNumber, double price) {
         this.qualityLevel = qualityLevel;
         this.beds = beds;
         this.smokingStatus = smokingStatus;
