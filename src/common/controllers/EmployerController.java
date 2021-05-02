@@ -11,8 +11,8 @@ public class EmployerController extends Controller {
         super();
     }
 
-    @Override
-    public UserView returnView() throws RemoteException {
-        return new EmployeeView();
-    }
+//    @Override
+//    public UserView returnView() throws RemoteException {
+//        return new EmployeeView();
+//    }
 }

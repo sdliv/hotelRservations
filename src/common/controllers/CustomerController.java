@@ -36,8 +36,8 @@ public class CustomerController extends Controller {
         this.reservation.reserve();
     }
 
-    @Override
-    public ArrayList<Room> getAvailableRooms() {
-        return Hotel.getAvailableRooms();
-    }
+//    @Override
+//    public ArrayList<Room> getAvailableRooms() {
+//        return Hotel.getAvailableRooms();
+//    }
 }

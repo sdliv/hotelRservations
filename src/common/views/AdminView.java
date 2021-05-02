@@ -8,14 +8,13 @@ import java.util.ArrayList;
 
 public class AdminView extends UserView {
 
-    private AdminController adminController = new AdminController();
+//    private AdminController adminController = new AdminController();
 
     public AdminView() throws RemoteException {
     }
 
-    @Override
-    public ArrayList<Room> getRooms() {
-        rooms = adminController.getAvailableRooms();
-        return rooms;
-    }
+//    @Override
+//    public void getRooms() {
+//        rooms = adminController.getAvailableRooms();
+//    }
 }

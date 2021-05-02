@@ -18,6 +18,8 @@ public class Room {
         this.availability = availability;
         this.description = description;
         this.reservationNumber = reservationNumber;
+        this.roomNumber = roomNumber;
+        this.price = price;
     }
 
     public int getQualityLevel() {
@@ -82,5 +84,16 @@ public class Room {
 
     public void setReservationNumber(int reservationNumber) {
         this.reservationNumber = reservationNumber;
+    }
+
+    public String printRoomInformation() {
+
+        return "Room Number: " + this.roomNumber + "\n" +
+                "Quality Level: " + this.qualityLevel + "\n" +
+                "Beds: " + this.beds + "\n" +
+                "Smoking status: " + this.smokingStatus + "\n" +
+                "Availability: " + this.availability + "\n" +
+                "Description: " + this.description + "\n" +
+                "Price: " + this.price;
     }
 }

@@ -1,6 +1,7 @@
 package common.users;
 
 import common.roles.Role;
+import common.views.UserView;
 
 import java.io.Serializable;
 

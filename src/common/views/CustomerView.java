@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class CustomerView extends UserView {
 
-    private CustomerController customerController = new CustomerController();
+//    private CustomerController customerController = new CustomerController();
 
     public CustomerView() throws RemoteException {
         super();
@@ -26,9 +26,11 @@ public class CustomerView extends UserView {
 
     }
 
-    @Override
-    public ArrayList<Room> getRooms() {
-        rooms = customerController.getAvailableRooms();
-        return rooms;
-    }
+//    @Override
+//    public void getRooms() {
+//        rooms = customerController.getAvailableRooms();
+//        for (Room room : rooms) {
+//
+//        }
+//    }
 }

@@ -18,7 +18,6 @@ public class UserView implements Serializable {
         return null;
     }
 
-    public ArrayList<Room> getRooms() {
-        return null;
+    public void getRooms() {
     }
 }

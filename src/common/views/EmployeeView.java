@@ -8,15 +8,14 @@ import java.util.ArrayList;
 
 public class EmployeeView extends UserView {
 
-    private EmployerController employerController = new EmployerController();
+//    private EmployerController employerController = new EmployerController();
 
     public EmployeeView() throws RemoteException {
     }
 
 
-    @Override
-    public ArrayList<Room> getRooms() {
-        rooms = employerController.getAvailableRooms();
-        return rooms;
-    }
+//    @Override
+//    public void getRooms() {
+//        rooms = employerController.getAvailableRooms();
+//    }
 }
