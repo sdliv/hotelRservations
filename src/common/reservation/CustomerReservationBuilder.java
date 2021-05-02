@@ -8,6 +8,10 @@ import java.util.Random;
 
 public class CustomerReservationBuilder extends ReservationBuilder {
 
+    public CustomerReservationBuilder(Room room) {
+        super(room);
+    }
+
     @Override
     public void addRoom(Room room) {
 //        Room room = new Room(int qualityLevel, int beds, int roomNumber, boolean smokingStatus, boolean availability, double price, String description, int reservationNumber)

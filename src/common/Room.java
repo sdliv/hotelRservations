@@ -1,6 +1,9 @@
 package common;
 
-public class Room {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class Room extends UnicastRemoteObject {
 
     private int qualityLevel;
     private int beds;
@@ -9,15 +12,14 @@ public class Room {
     private boolean availability;
     private double price;
     private String description;
-    private int reservationNumber;
 
-    public Room(int qualityLevel, int beds, boolean smokingStatus, boolean availability, String description, int reservationNumber, int roomNumber, double price) {
+    public Room(int qualityLevel, int beds, boolean smokingStatus, boolean availability, String description, int roomNumber, double price) throws RemoteException {
         this.qualityLevel = qualityLevel;
         this.beds = beds;
         this.smokingStatus = smokingStatus;
         this.availability = availability;
         this.description = description;
-        this.reservationNumber = reservationNumber;
+
         this.roomNumber = roomNumber;
         this.price = price;
     }
@@ -76,14 +78,6 @@ public class Room {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public int getReservationNumber() {
-        return reservationNumber;
-    }
-
-    public void setReservationNumber(int reservationNumber) {
-        this.reservationNumber = reservationNumber;
     }
 
     public String printRoomInformation() {

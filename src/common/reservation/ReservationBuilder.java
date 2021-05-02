@@ -10,6 +10,10 @@ public abstract class ReservationBuilder {
     protected Map<String, Object> reservationDetails = new HashMap<>();
     protected Room room;
 
+    public ReservationBuilder(Room room) {
+        this.room = room;
+    }
+
     public final Reservation buildReservation() {
         addRoom(this.room);
         createReservation();

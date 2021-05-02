@@ -32,8 +32,8 @@ public class CustomerController extends Controller {
         this.customer = customer;
     }
 
-    public void makeReservation() {
-        this.reservation.reserve();
+    public void makeReservation(Room room) {
+        this.reservation.reserve(room);
     }
 
 //    @Override

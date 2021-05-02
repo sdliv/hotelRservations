@@ -30,7 +30,7 @@ public class CustomerClient {
             ILogin loginStub = (ILogin)Naming.lookup(loginLocation);
 
             System.out.println("Contacting Server");
-            System.out.println("Reservation Status: " + stub.reserve());
+//            System.out.println("Reservation Status: " + stub.reserve());
             System.out.println("Reservation Status: " + stub.cancel());
 
 //            CustomerView view = (CustomerView) loginStub.login(customer);

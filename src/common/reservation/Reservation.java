@@ -11,5 +11,8 @@ public class Reservation {
         this.reservationDetails = reservationDetails;
     }
 
+    public Map<String, Object> getReservationDetails() {
+        return reservationDetails;
+    }
 
 }

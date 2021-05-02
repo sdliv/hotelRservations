@@ -2,11 +2,16 @@ package common;
 
 import jdk.dynalink.beans.StaticClass;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-public class Hotel {
+public class Hotel extends UnicastRemoteObject {
     private static ArrayList<Room> availableRooms = new ArrayList<>();
     private static ArrayList<Room> reservedRooms = new ArrayList<>();
+
+    protected Hotel() throws RemoteException {
+    }
 
     public static String addRoom(Room room) {
         availableRooms.add(room);
