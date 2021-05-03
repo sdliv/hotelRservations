@@ -4,12 +4,15 @@ import common.Hotel;
 import common.controllers.AdminController;
 import common.controllers.CustomerController;
 import common.controllers.EmployerController;
+import common.factories.IReturnView;
+import common.factories.ReturnViewFactory;
 import common.interfaces.ILogin;
 import common.operations.HotelOperationExecutor;
 import common.operations.LoginOperation;
 import common.roles.Admin;
 import common.roles.CUser;
 import common.roles.PowerUser;
+import common.roles.Role;
 import common.users.Customer;
 import common.users.Person;
 import common.views.ErrorView;
@@ -33,19 +36,10 @@ public class LoginImpl extends UnicastRemoteObject implements ILogin {
     @Override
     public UserView login(Person user) throws RemoteException {
 
-        if (hotelOperationExecutor.executeOperation(new LoginOperation(user)) instanceof Admin) {
-            AdminController adminController = new AdminController();
-        }
 
-        if (hotelOperationExecutor.executeOperation(new LoginOperation(user)) instanceof PowerUser) {
-            EmployerController employerController = new EmployerController();
-            return employerController.returnView();
-        }
-
-        if (hotelOperationExecutor.executeOperation(new LoginOperation(user)) instanceof CUser) {
-            CustomerController customerController = new CustomerController();
-            return customerController.returnView();
-        }
-        return new ErrorView();
+        Role role = hotelOperationExecutor.executeOperation(new LoginOperation(user));
+        ReturnViewFactory returnViewFactory = new ReturnViewFactory();
+        IReturnView returnView = returnViewFactory.returnView(role.getName());
+        return returnView.returnView();
     }
 }

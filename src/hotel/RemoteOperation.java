@@ -1,13 +1,8 @@
 package hotel;
 
 import common.Hotel;
-import common.Room;
-import common.controllers.Controller;
 import common.interfaces.ILogin;
 import common.interfaces.IReservation;
-import common.interfaces.IReturnView;
-import common.interfaces.IView;
-import common.views.UserView;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;

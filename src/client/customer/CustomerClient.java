@@ -3,7 +3,6 @@ package client.customer;
 import common.Room;
 import common.interfaces.ILogin;
 import common.interfaces.IReservation;
-import common.interfaces.IReturnView;
 import common.reservation.Reservation;
 import common.roles.Admin;
 import common.roles.CUser;
@@ -12,7 +11,6 @@ import common.users.Administrator;
 import common.users.Customer;
 import common.users.Employee;
 import common.views.CustomerView;
-import common.views.UserView;
 
 import java.rmi.Naming;
 import java.util.ArrayList;
@@ -22,7 +20,7 @@ public class CustomerClient {
         try {
             Customer customer = new Customer("Sean", "Livingston", new CUser("customer"));
             Administrator administrator = new Administrator("Nicole", "Livingston", new Admin("admin"));
-            Employee employee = new Employee("Stephon", "Johnson", new PowerUser("Employee"));
+            Employee employee = new Employee("Stephon", "Johnson", new PowerUser("employee"));
             Room room = null;
             ArrayList<Room> rooms = new ArrayList<>();
             ArrayList<Room> reservedRooms = new ArrayList<>();

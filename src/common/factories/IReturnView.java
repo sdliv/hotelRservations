@@ -1,4 +1,4 @@
-package common.interfaces;
+package common.factories;
 
 import common.views.UserView;
 

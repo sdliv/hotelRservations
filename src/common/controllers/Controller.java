@@ -1,8 +1,7 @@
 package common.controllers;
 
 import common.Room;
-import common.interfaces.IReservation;
-import common.interfaces.IReturnView;
+import common.factories.IReturnView;
 import common.views.UserView;
 
 import java.rmi.RemoteException;
