@@ -37,7 +37,7 @@ CLASSES = \
 	common/reservation/CustomerReservation.java \
 	common/reservation/CustomerReservationBuilder.java \
 	common/reservation/Reservation.java \
-	common/operations/ReservationBuilder.java \
+	common/reservation/ReservationBuilder.java \
 	hotel/RemoteOperation.java \
 	hotel/LoginImpl.java \
 	hotel/ReservationImpl.java
