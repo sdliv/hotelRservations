@@ -31,10 +31,10 @@ public class CustomerClient {
             Reservation reservation;
 
             // RMI Locations
-            String location = "//old.in-csci-rrpc03:4590/ReservationImpl";
+            String location = "//in-csci-rrpc03:4590/ReservationImpl";
 //            String location = "rmi://localhost:4590/ReservationImpl";
 //            String loginLocation = "rmi://localhost:4590/LoginImpl";
-            String loginLocation = "//old.in-csci-rrpc03:4590/LoginImpl";
+            String loginLocation = "//in-csci-rrpc03:4590/LoginImpl";
 
             // Create Stubs
             IReservation reservationStub = (IReservation)Naming.lookup(location);
