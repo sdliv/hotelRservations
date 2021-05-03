@@ -38,6 +38,14 @@ public class CustomerView extends UserView {
         return null;
     }
 
+    public ArrayList<Room> retreiveReservedRooms() {
+        ArrayList<Room> roomsTaken = Hotel.getReservedRooms();
+        if (!rooms.isEmpty()) {
+            return roomsTaken;
+        }
+        return null;
+    }
+
 //    @Override
 //    public void getRooms() {
 //        rooms = customerController.getAvailableRooms();

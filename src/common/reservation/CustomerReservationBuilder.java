@@ -14,8 +14,8 @@ public class CustomerReservationBuilder extends ReservationBuilder {
 
     @Override
     public void addRoom(Room room) {
-//        Room room = new Room(int qualityLevel, int beds, int roomNumber, boolean smokingStatus, boolean availability, double price, String description, int reservationNumber)
-        reservationDetails.put("Room Details", room.getDescription());
+        reservationDetails.put("Room Details", room.printRoomInformation());
+        Hotel.reserveRoom(room);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package hotel;
 
-import common.Hotel;
 import common.interfaces.IReservation;
 import common.Room;
 import common.reservation.CustomerReservationBuilder;
@@ -9,7 +8,6 @@ import common.reservation.Reservation;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
-import java.util.Map;
 
 public class ReservationImpl extends UnicastRemoteObject implements IReservation {
     private boolean cancellationStatus;
@@ -22,14 +20,14 @@ public class ReservationImpl extends UnicastRemoteObject implements IReservation
     }
 
     @Override
-    public Map<String, Object> reserve(Room room) {
+    public Reservation reserve(Room room) {
         CustomerReservationBuilder customerReservationBuilder = new CustomerReservationBuilder(room);
         Reservation reservation = customerReservationBuilder.buildReservation();
 
 
 
         System.out.println("Hotel Reserved");
-        return reservation.getReservationDetails();
+        return reservation;
     }
 
     @Override

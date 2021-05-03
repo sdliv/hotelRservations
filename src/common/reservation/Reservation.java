@@ -1,9 +1,10 @@
 package common.reservation;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Reservation {
+public class Reservation implements Serializable {
 
     private Map<String, Object> reservationDetails = new HashMap<>();
 

@@ -4,6 +4,7 @@ import common.Room;
 import common.interfaces.ILogin;
 import common.interfaces.IReservation;
 import common.interfaces.IReturnView;
+import common.reservation.Reservation;
 import common.roles.Admin;
 import common.roles.CUser;
 import common.roles.PowerUser;
@@ -24,40 +25,60 @@ public class CustomerClient {
             Employee employee = new Employee("Stephon", "Johnson", new PowerUser("Employee"));
             Room room = null;
             ArrayList<Room> rooms = new ArrayList<>();
+            ArrayList<Room> reservedRooms = new ArrayList<>();
+            Reservation reservation;
 
 //            String location = "//in-csci-rrpc03:4590/ReservationImpl";
             String location = "rmi://localhost:4590/ReservationImpl";
             String loginLocation = "rmi://localhost:4590/LoginImpl";
-            String hotelLocation = "rmi://localhost:4590/Hotel";
 //            String loginLocation = "//in-csci-rrpc03:4590/LoginImpl";
 
             IReservation reservationStub = (IReservation)Naming.lookup(location);
             ILogin loginStub = (ILogin)Naming.lookup(loginLocation);
 
             System.out.println("Contacting Server");
-
-//            CustomerView view = (CustomerView) loginStub.login(customer);
-//            customer.setView(view);
-
+            System.out.println();
 
             System.out.println("Login status: " + loginStub.login(customer));
             System.out.println("Login status: " + loginStub.login(administrator));
             System.out.println("Login status: " + loginStub.login(employee));
+            System.out.println();
 
             CustomerView view = (CustomerView) loginStub.login(customer);
 
             rooms = view.retrieveRooms();
 
+            System.out.println("ROOMS AVAILABLE: ");
             if (!rooms.isEmpty()) {
                 for (Room aRoom : rooms) {
-                    System.out.println(aRoom.getDescription());
+                    System.out.println(aRoom.printRoomInformation());
+                    System.out.println();
+                }
+            }
+            System.out.println("END ROOMS AVAILABLE");
+            System.out.println();
+
+            System.out.println("RESERVATION: ");
+            if (!rooms.isEmpty()) {
+                room = rooms.get(1);
+                reservation = reservationStub.reserve(room);
+                System.out.println();
+                System.out.println(reservation.getReservationDetails());
+            }
+
+            reservedRooms = view.retreiveReservedRooms();
+            System.out.println();
+            System.out.println("RESERVED ROOMS:");
+            if (!reservedRooms.isEmpty()) {
+                for (Room aRoom : reservedRooms) {
+                    System.out.println(aRoom.printRoomInformation());
+                    System.out.println();
                 }
             }
 
-            if (!rooms.isEmpty()) {
-                room = rooms.get(1);
-                System.out.println("Room Information: " + room.printRoomInformation());
-            }
+
+
+            System.out.println();
             System.out.println("Reservation Status: " + reservationStub.cancel());
 
 
