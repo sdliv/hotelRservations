@@ -18,7 +18,7 @@ public class RemoteOperation {
     public static void main (String[] args) {
         try {
             hotel = Hotel.getInstance();
-            registry = LocateRegistry.createRegistry(4590);
+//            registry = LocateRegistry.createRegistry(4590);
 
             IReservation remote_obj = new ReservationImpl();
             ILogin login_obj = new LoginImpl();
