@@ -1,9 +1,8 @@
 package common;
 
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
+import java.io.Serializable;
 
-public class Room extends UnicastRemoteObject {
+public class Room implements Serializable {
 
     private int qualityLevel;
     private int beds;
@@ -13,7 +12,7 @@ public class Room extends UnicastRemoteObject {
     private double price;
     private String description;
 
-    public Room(int qualityLevel, int beds, boolean smokingStatus, boolean availability, String description, int roomNumber, double price) throws RemoteException {
+    public Room(int qualityLevel, int beds, boolean smokingStatus, boolean availability, String description, int roomNumber, double price) {
         this.qualityLevel = qualityLevel;
         this.beds = beds;
         this.smokingStatus = smokingStatus;

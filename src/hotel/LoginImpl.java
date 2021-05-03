@@ -1,5 +1,6 @@
 package hotel;
 
+import common.Hotel;
 import common.controllers.AdminController;
 import common.controllers.CustomerController;
 import common.controllers.EmployerController;
@@ -21,8 +22,12 @@ public class LoginImpl extends UnicastRemoteObject implements ILogin {
 
     HotelOperationExecutor hotelOperationExecutor = new HotelOperationExecutor();
 
+
+
     public LoginImpl() throws RemoteException {
         super();
+        Hotel hotel = Hotel.getInstance();
+        System.out.println();
     }
 
     @Override
@@ -41,21 +46,6 @@ public class LoginImpl extends UnicastRemoteObject implements ILogin {
             CustomerController customerController = new CustomerController();
             return customerController.returnView();
         }
-
-//        if (user.getRole() instanceof Admin) {
-//            AdminController adminController = new AdminController();
-//            return adminController.returnView();
-//        }
-//
-//        if (user.getRole() instanceof PowerUser) {
-//            EmployerController employerController = new EmployerController();
-//            return employerController.returnView();
-//        }
-//
-//        if (user.getRole() instanceof CUser) {
-//            CustomerController customerController = new CustomerController();
-//            return customerController.returnView();
-//        }
         return new ErrorView();
     }
 }

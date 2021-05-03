@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class CustomerView extends UserView {
 
 //    private CustomerController customerController = new CustomerController();
+    ArrayList<Room> rooms = new ArrayList<>();
 
     public CustomerView() throws RemoteException {
         super();
@@ -24,6 +25,17 @@ public class CustomerView extends UserView {
 
     public void makeReservation(Customer customer, Room room) {
 
+    }
+
+
+
+    public ArrayList<Room> retrieveRooms() {
+
+        rooms = Hotel.getAvailableRooms();
+        if (!rooms.isEmpty()) {
+            return rooms;
+        }
+        return null;
     }
 
 //    @Override
