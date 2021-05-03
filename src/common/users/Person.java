@@ -5,6 +5,8 @@ import common.views.UserView;
 
 import java.io.Serializable;
 
+// Parent class for User Types
+
 public class Person implements Serializable {
     private String firstName;
     private String lastName;

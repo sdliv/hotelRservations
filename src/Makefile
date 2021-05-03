@@ -12,12 +12,11 @@ CLASSES = \
 	common/users/Person.java \
 	common/interfaces/IReservation.java \
 	common/interfaces/ILogin.java \
-	common/interfaces/IReturnView.java \
-	common/interfaces/IView.java \
 	common/roles/Admin.java \
 	common/roles/CUser.java \
 	common/roles/PowerUser.java \
 	common/roles/Role.java \
+	common/Hotel.java \
 	common/Room.java \
 	common/views/AdminView.java \
 	common/views/CustomerView.java \
@@ -28,6 +27,17 @@ CLASSES = \
 	common/controllers/AdminController.java \
 	common/controllers/Controller.java \
 	common/controllers/EmployerController.java \
+	common/factories/IReturnView.java \
+	common/factories/ReturnViewFactory.java \
+	common/operations/CancelReservationOperation.java \
+	common/operations/HotelOperation.java \
+	common/operations/HotelOperationExecutor.java \
+	common/operations/LoginOperation.java \
+	common/operations/ReserveOperation.java \
+	common/reservation/CustomReservation.java \
+	common/reservation/CustomerReservationBuilder.java \
+	common/reservation/Reservation.java \
+	common/operations/ReservationBuilder.java \
 	hotel/RemoteOperation.java \
 	hotel/LoginImpl.java \
 	hotel/ReservationImpl.java

@@ -6,6 +6,8 @@ import common.controllers.EmployerController;
 
 import java.rmi.RemoteException;
 
+// Implementation of Factory
+
 public class ReturnViewFactory {
     public IReturnView returnView(String roleName) throws RemoteException {
 

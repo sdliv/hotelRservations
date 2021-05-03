@@ -39,11 +39,6 @@ interface IReturnView {
   UserView returnView()
 }
 
-interface Reservation {
-  reserve()
-  cancellation()
-}
-
 class CustomerController extends Controller {
   - Customer customer;
   - ReservationImpl reservation;
@@ -100,7 +95,7 @@ class Room {
   -int reservationNumber;
 }
 
-class ReservationImpl implements Reservation {
+class ReservationImpl implements IReservation {
   -boolean reservationStatus;
   -double feeApplied;
   -Room room;
@@ -113,7 +108,39 @@ class RemoteOperation {
   main()
 }
 
+class ReturnViewFactory {
+    IReturnView returnView(String name);
+}
 
+interface HotelOperation {
+    Role execute();
+}
+
+class LoginOperation implements HotelOperation {
+
+}
+
+class HotelOperationExecutor {
+
+}
+
+class Reservation {
+    Map<String, Object> getReservationDetails();
+}
+
+class CustomerReservation extends Reservation {
+
+}
+
+abstract class ReservationBuilder {
+    addRoom(Room room);
+    addReservationNumber();
+    createReservation();
+}
+
+class CustomerReservationBuilder() extends ReservationBuilder {
+
+}
 
 class CustomerClient {
   main()
@@ -130,5 +157,4 @@ Administrator "1" *-- "many" Person : contains
 Employee "1" *-- "many" Person : contains
 Customer "1" *-- "many" Person : contains
 Customer "1" *-- "1" Room
-Customer "1" *-- "1" Reservation
 @enduml

@@ -5,6 +5,8 @@ import common.Room;
 import java.util.HashMap;
 import java.util.Map;
 
+// Abstract Class for Template Method
+
 public abstract class ReservationBuilder {
 
     protected Map<String, Object> reservationDetails = new HashMap<>();

@@ -6,6 +6,8 @@ import common.Room;
 import java.util.ArrayList;
 import java.util.Random;
 
+// Template Builder of Template method
+
 public class CustomerReservationBuilder extends ReservationBuilder {
 
     public CustomerReservationBuilder(Room room) {

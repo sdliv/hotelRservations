@@ -21,6 +21,8 @@ public class ReservationImpl extends UnicastRemoteObject implements IReservation
 
     @Override
     public Reservation reserve(Room room) {
+        // Template method in use to build Reservations
+
         CustomerReservationBuilder customerReservationBuilder = new CustomerReservationBuilder(room);
         Reservation reservation = customerReservationBuilder.buildReservation();
 

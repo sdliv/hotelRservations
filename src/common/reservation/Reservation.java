@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+// Base class for template method.
+
 public class Reservation implements Serializable {
 
     private Map<String, Object> reservationDetails = new HashMap<>();

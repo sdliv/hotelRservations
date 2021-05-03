@@ -21,7 +21,11 @@ import common.views.UserView;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
+// Front Controller to all Controllers.
+
 public class LoginImpl extends UnicastRemoteObject implements ILogin {
+
+    // Use of Command Pattern
 
     HotelOperationExecutor hotelOperationExecutor = new HotelOperationExecutor();
 
@@ -36,7 +40,7 @@ public class LoginImpl extends UnicastRemoteObject implements ILogin {
     @Override
     public UserView login(Person user) throws RemoteException {
 
-
+        // Further use of Command Pattern in tandem with Front Controller to handle User Login.
         Role role = hotelOperationExecutor.executeOperation(new LoginOperation(user));
         ReturnViewFactory returnViewFactory = new ReturnViewFactory();
         IReturnView returnView = returnViewFactory.returnView(role.getName());

@@ -4,6 +4,8 @@ import common.roles.Role;
 import common.users.Person;
 import common.views.UserView;
 
+// Login Command Operation
+
 public class LoginOperation implements HotelOperation {
 
     private Person user;

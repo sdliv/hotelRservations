@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import java.util.ArrayList;
 
+// Hotel Class: Responsible for setting number of Rooms in hotel.
+
 public class Hotel implements Serializable {
     private static ArrayList<Room> availableRooms = new ArrayList<>();
     private static ArrayList<Room> reservedRooms = new ArrayList<>();

@@ -5,6 +5,8 @@ import common.users.Person;
 
 import java.util.ArrayList;
 
+// Command Executor
+
 public class HotelOperationExecutor {
 
     private final ArrayList<HotelOperation> hotelOperations = new ArrayList<>();

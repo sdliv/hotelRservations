@@ -6,6 +6,8 @@ import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 
+// Parent class of Views
+
 public class UserView implements Serializable {
 
     ArrayList<Room> rooms = new ArrayList<>();

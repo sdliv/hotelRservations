@@ -2,6 +2,8 @@ package common.roles;
 
 import java.io.Serializable;
 
+// Parent class for Roles.
+
 public class Role implements Serializable {
 
     private String name;
