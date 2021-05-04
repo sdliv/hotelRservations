@@ -23,10 +23,10 @@ public class RemoteOperation {
             IReservation remote_obj = new ReservationImpl();
             ILogin login_obj = new LoginImpl();
 
-            String location = "//in-csci-rrpc06:4590/ReservationImpl";
+            String location = "//old.in-csci-rrpc06:4590/ReservationImpl";
 //            String location = "rmi://localhost:4590/ReservationImpl";
 //            String loginLocation = "rmi://localhost:4590/LoginImpl";
-            String loginLocation = "//in-csci-rrpc06:4590/LoginImpl";
+            String loginLocation = "//old.in-csci-rrpc06:4590/LoginImpl";
 
 
             Naming.rebind(loginLocation, login_obj);
